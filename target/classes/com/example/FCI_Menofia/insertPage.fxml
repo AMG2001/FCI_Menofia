@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="538.0" prefWidth="586.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.InsertPage">
+   <children>
+      <Button layoutX="33.0" layoutY="27.0" mnemonicParsing="false" text="&lt;- Back To main" />
+      <Label layoutX="358.0" layoutY="22.0" text="Insert New Student">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="DoneButton" layoutX="486.0" layoutY="474.0" mnemonicParsing="false" onAction="#done" style="-fx-background-color: green;" text="Done !!" textFill="WHITE" />
+      <GridPane alignment="CENTER" layoutX="47.0" layoutY="125.0" prefHeight="132.0" prefWidth="342.0" style="-fx-padding: 0; -fx-border-radius: 30.0;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.3999786376953" minWidth="10.0" prefWidth="134.40001220703124" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="426.19999694824224" minWidth="10.0" prefWidth="208.79998779296872" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="138.3999816894531" minHeight="10.0" prefHeight="29.79998779296875" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="159.6000244140625" minHeight="10.0" prefHeight="37.199993896484365" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="153.5999755859375" minHeight="10.0" prefHeight="36.400006103515636" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="153.5999755859375" minHeight="10.0" prefHeight="31.20000610351562" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="studentNameTextField" alignment="CENTER" prefHeight="26.0" prefWidth="175.0" promptText="Student Name" style="-fx-alignment: center; -fx-max-width: 200;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label text="National id :" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="nationalIdTextField" promptText="National ID" style="-fx-max-width: 200; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label text="JPA :" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="jpaTextField" prefWidth="200.0" promptText="Student JPA" style="-fx-alignment: center; -fx-max-width: 200;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label text="Section :" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sectionTextField" promptText="Section Number" style="-fx-alignment: center; -fx-max-width: 200;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+      <Line endX="347.5999755859375" layoutX="150.0" layoutY="111.0" opacity="0.5" startX="-110.79997253417969" />
+      <HBox alignment="CENTER" layoutX="16.0" layoutY="282.0" prefHeight="46.0" prefWidth="498.0" spacing="30.0">
+         <children>
+            <Label text="Level :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="level1RadioButton" mnemonicParsing="false" text="Level 1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="levelsButtonsToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="level2RadioButton" mnemonicParsing="false" text="Level 2" toggleGroup="$levelsButtonsToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="level3RadioButton" mnemonicParsing="false" text="Level 3" toggleGroup="$levelsButtonsToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="level4RadioButton" mnemonicParsing="false" text="Level 4" toggleGroup="$levelsButtonsToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <Label layoutX="36.0" layoutY="73.0" text="Student Info">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutY="336.0" prefHeight="46.0" prefWidth="561.0" spacing="18.0">
+         <children>
+            <Label text="Depatment :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="SeRadioButton" mnemonicParsing="false" text="SE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="departmentToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="CsRadioButton" mnemonicParsing="false" text="CS" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="ItRadioButton" mnemonicParsing="false" text="IT" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="IsRadioButton" mnemonicParsing="false" text="IS" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="OrRadioButton" mnemonicParsing="false" text="OR" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="BioRadioButton" mnemonicParsing="false" text="BIO" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="OtherRadioButton" mnemonicParsing="false" text="other" toggleGroup="$departmentToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <Button fx:id="Term1Button" layoutX="178.0" layoutY="413.0" mnemonicParsing="false" text="Term 1" />
+      <Button fx:id="Term2Button" layoutX="266.0" layoutY="413.0" mnemonicParsing="false" text="Term 2" />
+      <Line endX="379.79998779296875" layoutX="117.0" layoutY="394.0" startX="-83.40000915527344" />
+      <Label layoutX="15.0" layoutY="412.0" text="Student Courses :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
