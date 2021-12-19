@@ -111,6 +111,14 @@ StudentInfo student=new StudentInfo();
          */
         // get Name of student as String
         student.studentName=studentNameTextField.getText();
+        if(studentNameTextField.getText()=="") {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Name Input Error !");
+            alert.setHeaderText("you can't leave name Field Empty !!");
+            alert.setContentText("you must put Student name");
+            alert.showAndWait();
+        }
+        else{
         if(student.studentName.length()<10){
             nameIsTrue=false;
             allIsTrue=false;
@@ -141,7 +149,7 @@ StudentInfo student=new StudentInfo();
                 }
             }
         }
-
+}
         /*
          *
          * National id checking
@@ -150,36 +158,45 @@ StudentInfo student=new StudentInfo();
         // get national id of student
         student.nationalId=nationalIdTextField.getText();
         // check if the inputted National id is correct or not ->
-        if(student.nationalId.length()!=14){
-            nationalIdIsTrue=false;
-            allIsTrue=false;
+        if(nationalIdTextField.getText()==""){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("National ID Input Error !");
-            alert.setHeaderText("Error in National ID Field");
-            alert.setContentText("National id can't be less than 14 Digit !! ");
+            alert.setHeaderText("you can't leave National ID Field empty ");
+            alert.setContentText("Student National id must be inserted !! ");
             alert.showAndWait();
         }
         else{
-            // convert the national id to Array of chars contains the Numbers
-            char[] nationalIdInCahracters=student.nationalId.toCharArray();
-            for(int x:nationalIdInCahracters){
-                // if the item is digit then it pass .. else it mean that
-                // it char or special character etc .
-                if(x<48||x>57){
-                    nationalIdIsTrue=false;
-                    allIsTrue=false;
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("National ID Input Error !");
-                    alert.setHeaderText("Error in National ID Field");
-                    alert.setContentText("National id Must be Numbers only !!");
-                    alert.showAndWait();
-                    break;
+            if (student.nationalId.length() != 14) {
+                nationalIdIsTrue = false;
+                allIsTrue = false;
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("National ID Input Error !");
+                alert.setHeaderText("Error in National ID Field");
+                alert.setContentText("National id can't be less than 14 Digit !! ");
+                alert.showAndWait();
+            } else {
+                // convert the national id to Array of chars contains the Numbers
+                char[] nationalIdInCahracters = student.nationalId.toCharArray();
+                for (int x : nationalIdInCahracters) {
+                    // if the item is digit then it pass .. else it mean that
+                    // it char or special character etc .
+                    if (x < 48 || x > 57) {
+                        nationalIdIsTrue = false;
+                        allIsTrue = false;
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("National ID Input Error !");
+                        alert.setHeaderText("Error in National ID Field");
+                        alert.setContentText("National id Must be Numbers only !!");
+                        alert.showAndWait();
+                        break;
+                    } else {
+                        allIsTrue = true;
+                        nationalIdIsTrue = true;
+                    }
                 }
-                else{ allIsTrue=true;
-                    nationalIdIsTrue=true;}
+                nationalIdIsTrue = true;
+                allIsTrue = true;
             }
-            nationalIdIsTrue=true;
-            allIsTrue=true;
         }
         /*
          *
@@ -224,20 +241,28 @@ StudentInfo student=new StudentInfo();
          */
         // get Number of Section
         student.studentSection=sectionTextField.getText();
-        char[] studentSectionInChar=student.studentSection.toCharArray();
-        for(int x:studentSectionInChar){
-            if(x<48||x>57){
-                sectionIsTrue=false;
-                allIsTrue=false;
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Section Input Error !");
-                alert.setHeaderText("Error in Section Field");
-                alert.setContentText("Section Must be Numbers only !!");
-                alert.showAndWait();
-                break;
-            }else {
-                sectionIsTrue=true;
-                allIsTrue = true;
+        if(sectionTextField.getText()==""){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Section Input Error !");
+            alert.setHeaderText("you can't leave Section Field Empty !!");
+            alert.setContentText("Section Must be Numbers only !!");
+            alert.showAndWait();
+        }else {
+            char[] studentSectionInChar = student.studentSection.toCharArray();
+            for (int x : studentSectionInChar) {
+                if (x < 48 || x > 57) {
+                    sectionIsTrue = false;
+                    allIsTrue = false;
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Section Input Error !");
+                    alert.setHeaderText("Error in Section Field");
+                    alert.setContentText("Section Must be Numbers only !!");
+                    alert.showAndWait();
+                    break;
+                } else {
+                    sectionIsTrue = true;
+                    allIsTrue = true;
+                }
             }
         }
         /*
@@ -314,7 +339,9 @@ StudentInfo student=new StudentInfo();
             System.out.println("Student level is ->"+student.studentLevel);
             System.out.println("Student department is ->"+student.studentDepartment);
             System.out.println("Number of Avilable Courses ->"+availableCoursesForStudent);
-            new CustomFunctions().gotToScene(goToCoursesPage,"seLevel3Term1.fxml");
+            if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()){
+                new CustomFunctions().gotToScene(goToCoursesPage,"seLevel3Term1.fxml");
+            }
         }
 
     }
