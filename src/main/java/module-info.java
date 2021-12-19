@@ -8,4 +8,6 @@ module com.example.studentapp123456 {
 
     opens com.example.FCI_Menofia to javafx.fxml,javafx.controls,javafx.graphics;
     exports com.example.FCI_Menofia;
+    exports com.example.FCI_Menofia.CoursesScenesBackend;
+    opens com.example.FCI_Menofia.CoursesScenesBackend to javafx.controls, javafx.fxml, javafx.graphics;
 }
