@@ -1,11 +1,13 @@
 package com.example.FCI_Menofia;
 
+import databases.StudentsDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    StudentsDataBase studentDatabaseObj=new StudentsDataBase();
     @Override
     public void start(Stage stage){
        try{

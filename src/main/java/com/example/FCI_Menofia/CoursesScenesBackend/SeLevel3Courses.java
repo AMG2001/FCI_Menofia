@@ -1,12 +1,14 @@
 package com.example.FCI_Menofia.CoursesScenesBackend;
 
+import com.example.FCI_Menofia.CustomFunctions;
 import com.example.FCI_Menofia.InsertPage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
-public class SeLevel3Term1 {
+public class SeLevel3Courses {
 InsertPage insertPageObj=new InsertPage();
     String algorithmCheckBoxCurrentState="unChecked";
     String aiCheckBoxCurrentState="unChecked";
@@ -14,6 +16,16 @@ InsertPage insertPageObj=new InsertPage();
     String programming3CheckBoxCurrentState="unChecked";
     String se2CheckBoxCurrentState="unChecked";
     String os2CheckBoxCurrentState="unChecked";
+    String course1;
+    String course2;
+    String course3;
+        String course4;
+        String course5;
+        String course6;
+
+    @FXML
+    private Button insertStudentIntoDBButton;
+
     @FXML
     private CheckBox AlgorithmsCheckBox;
 
@@ -40,10 +52,12 @@ InsertPage insertPageObj=new InsertPage();
     void AlgorithmsCheckBoxChecked(ActionEvent event) {
 if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&algorithmCheckBoxCurrentState=="unChecked"){
    algorithmCheckBoxCurrentState="checked";
+   course1="Algorithms";
     insertPageObj.coursesCounter++;
 }else if(algorithmCheckBoxCurrentState=="checked"){
     algorithmCheckBoxCurrentState="unChecked";
     AlgorithmsCheckBox.setSelected(false);
+    course1="";
     insertPageObj.coursesCounter--;
 }
 else{
@@ -66,10 +80,12 @@ else{
     void artificialIntellegenceCheckBoxChecked(ActionEvent event) {
         if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&aiCheckBoxCurrentState=="unChecked"){
             aiCheckBoxCurrentState="checked";
+            course2="Artificail Intellegence";
             insertPageObj.coursesCounter++;
         }else if(aiCheckBoxCurrentState=="checked"){
             algorithmCheckBoxCurrentState="unChecked";
             AlgorithmsCheckBox.setSelected(false);
+            course2="";
             insertPageObj.coursesCounter--;
         }
         else{
@@ -91,10 +107,12 @@ else{
     void cloudComputingCheckBoxChecked(ActionEvent event) {
         if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&cloudComputingCheckBoxCurrentState=="unChecked"){
             cloudComputingCheckBoxCurrentState="checked";
+            course3="Cloud Computing";
             insertPageObj.coursesCounter++;
         }else if(cloudComputingCheckBoxCurrentState=="checked"){
             cloudComputingCheckBoxCurrentState="unChecked";
             cloudComputingCheckBox.setSelected(false);
+            course3="";
             insertPageObj.coursesCounter--;
         }
         else{
@@ -116,10 +134,12 @@ else{
     void operatingSystem2CheckBoxChecked(ActionEvent event) {
         if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&os2CheckBoxCurrentState=="unChecked"){
             os2CheckBoxCurrentState="checked";
+            course4="Operating System2";
             insertPageObj.coursesCounter++;
         }else if(os2CheckBoxCurrentState=="checked"){
             os2CheckBoxCurrentState="unChecked";
             operatingSystem2CheckBox.setSelected(false);
+            course4="";
             insertPageObj.coursesCounter--;
         }
         else{
@@ -141,10 +161,12 @@ else{
     void programming3CheckBoxChecked(ActionEvent event) {
         if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&programming3CheckBoxCurrentState=="unChecked"){
             programming3CheckBoxCurrentState="checked";
+            course5="Programming 3";
             insertPageObj.coursesCounter++;
         }else if(programming3CheckBoxCurrentState=="checked"){
             programming3CheckBoxCurrentState="unChecked";
             programming3CheckBox.setSelected(false);
+            course5="";
             insertPageObj.coursesCounter--;
         }
         else{
@@ -167,10 +189,12 @@ else{
     void softwareEngineering2CheckBoxChecked(ActionEvent event) {
         if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&se2CheckBoxCurrentState=="unChecked"){
             se2CheckBoxCurrentState="checked";
+            course6="Software Engineering 2";
             insertPageObj.coursesCounter++;
         }else if(se2CheckBoxCurrentState=="checked"){
             se2CheckBoxCurrentState="unChecked";
             softwareEngineering2CheckBox.setSelected(false);
+            course6="";
             insertPageObj.coursesCounter--;
         }
         else{
@@ -182,6 +206,19 @@ else{
             alert.setContentText("you can't add More Courses for this student Depending on his GPA");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    void addStudentToDB(ActionEvent event) {
+insertPageObj.getStudentCourses(course1,course2,course3,course4,course5,course6);
+       insertPageObj.displayCourses();
+       // TODO insert Query To DB
+        try{
+            new CustomFunctions().gotToScene(insertStudentIntoDBButton,"insertPage.fxml");
+        }catch (Exception e){
+            System.out.println("Error when moving from Courses page to insert Page !! ");
+        }
+          insertPageObj.setInsertPageEmpty();
     }
 
 }

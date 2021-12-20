@@ -13,4 +13,7 @@ public StudentsDataBase(){
         System.out.println("There is an error while Connection with students database !!");
     }
 }
+public void createTableStudentDataBase(){
+
+}
 }

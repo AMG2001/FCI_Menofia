@@ -5,8 +5,32 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import student.StudentInfo;
 
+
 public class InsertPage {
+
 StudentInfo student=new StudentInfo();
+// this Function is used to get Courses from SE Courses page
+public void getStudentCourses(String studentCourse1,
+                          String studentCourse2,
+                          String studentCourse3,
+                          String studentCourse4,
+                          String studentCourse5,
+                          String studentCourse6){
+    student.studentCourse1=studentCourse1;
+    student.studentCourse2=studentCourse2;
+    student.studentCourse3=studentCourse3;
+    student.studentCourse4=studentCourse4;
+    student.studentCourse5=studentCourse5;
+    student.studentCourse6=studentCourse6;
+}
+public void displayCourses(){
+    System.out.println("course 1 -> "+student.studentCourse1);
+    System.out.println("course 2 -> "+student.studentCourse2);
+    System.out.println("course 3 -> "+student.studentCourse3);
+    System.out.println("course 4 -> "+student.studentCourse4);
+    System.out.println("course 5 -> "+student.studentCourse5);
+    System.out.println("course 6 -> "+student.studentCourse6);
+}
     @FXML
     private RadioButton BioRadioButton;
 
@@ -63,10 +87,44 @@ StudentInfo student=new StudentInfo();
     boolean sectionIsTrue=false;
     public static  int availableCoursesForStudent=0;
     public static  int coursesCounter=0;
-    //Scene loginPageScene;
-// this Function after cheking on all required information
-// will send object of student to database
+    /*
+    *
+    * Functions Section ->
+    *
+     */
 
+    // this Function is called by courses page -
+    // after choosing courses and then clicking done ..
+    // the insertion query is sent to DB and GUI Back to insert Page
+    // when you return .. the all data and Controllers will be reseted .
+    public void setInsertPageEmpty(){
+    try{
+        allIsTrue=false;
+        nameIsTrue=false;
+        nationalIdIsTrue=false;
+        jpaIsTrue=false;
+        sectionIsTrue=false;
+        availableCoursesForStudent=0;
+        coursesCounter=0;
+        studentNameTextField.setText("");
+        nationalIdTextField.setText("");
+        jpaTextField.setText("");
+        sectionTextField.setText("");
+        level1RadioButton.setSelected(false);
+        level2RadioButton.setSelected(false);
+        level3RadioButton.setSelected(false);
+        level4RadioButton.setSelected(false);
+        CsRadioButton.setSelected(false);
+        ItRadioButton.setSelected(false);
+        IsRadioButton.setSelected(false);
+        OrRadioButton.setSelected(false);
+        SeRadioButton.setSelected(false);
+        BioRadioButton.setSelected(false);
+        OtherRadioButton.setSelected(false);
+    }catch (Exception e){
+        System.out.println("error while make Insert Page empty");
+    }
+    }
     // choosing the department is starting from level 3
     @FXML
     void level1RadioButtonSelected(ActionEvent event) {
@@ -310,7 +368,6 @@ StudentInfo student=new StudentInfo();
         if(OtherRadioButton.isSelected()){
             student.studentDepartment="other";
         }
-
         /*
          *
          * check if any one of input resources is empty " == null" ;
@@ -332,15 +389,15 @@ StudentInfo student=new StudentInfo();
             alert.setContentText("you can't leave any one of Fields Empty !!");
             alert.showAndWait();
         }else{
-            System.out.println("Student name is ->"+student.studentName);
-            System.out.println("Student National id is ->"+student.nationalId);
-            System.out.println("Student JPA is ->"+student.studentJPA);
-            System.out.println("Student Section is ->"+student.studentSection);
-            System.out.println("Student level is ->"+student.studentLevel);
-            System.out.println("Student department is ->"+student.studentDepartment);
-            System.out.println("Number of Avilable Courses ->"+availableCoursesForStudent);
             if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()){
-                new CustomFunctions().gotToScene(goToCoursesPage,"seLevel3Term1.fxml");
+                new CustomFunctions().gotToScene(goToCoursesPage,"SeLevel3Courses.fxml");
+                System.out.println("Student name is -> "+student.studentName);
+                System.out.println("Student National id is -> "+student.nationalId);
+                System.out.println("Student JPA is -> "+student.studentJPA);
+                System.out.println("Student Section is -> "+student.studentSection);
+                System.out.println("Student level is -> "+student.studentLevel);
+                System.out.println("Student department is -> "+student.studentDepartment);
+                System.out.println("Number of Avilable Courses -> "+availableCoursesForStudent+"\n");
             }
         }
 
