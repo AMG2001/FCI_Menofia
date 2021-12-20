@@ -400,6 +400,8 @@ public void displayCourses(){
                 System.out.println("Number of Avilable Courses -> "+availableCoursesForStudent+"\n");
             }
         }
-
+    }
+    public StudentInfo getStudentInfoToBeInsertedInDataBase(){
+        return student;
     }
 }

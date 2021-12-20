@@ -2,6 +2,7 @@ package com.example.FCI_Menofia.CoursesScenesBackend;
 
 import com.example.FCI_Menofia.CustomFunctions;
 import com.example.FCI_Menofia.InsertPage;
+import databases.StudentsDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -212,8 +213,13 @@ else{
     void addStudentToDB(ActionEvent event) {
 insertPageObj.getStudentCourses(course1,course2,course3,course4,course5,course6);
        insertPageObj.displayCourses();
-       // TODO insert Query To DB
-        try{
+       try{
+
+           new StudentsDataBase().insertNewStudentIntoStudentDataBase(insertPageObj.getStudentInfoToBeInsertedInDataBase());
+       }catch (Exception e){
+           System.out.println("Error while insertring student inside the database");
+       }
+       try{
             new CustomFunctions().gotToScene(insertStudentIntoDBButton,"insertPage.fxml");
         }catch (Exception e){
             System.out.println("Error when moving from Courses page to insert Page !! ");
