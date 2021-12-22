@@ -9,20 +9,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
-public class SeLevel3Courses {
-InsertPage insertPageObj=new InsertPage();
+public class SeLevel3Courses extends InsertPage{
+
     String algorithmCheckBoxCurrentState="unChecked";
     String aiCheckBoxCurrentState="unChecked";
     String cloudComputingCheckBoxCurrentState="unChecked";
     String programming3CheckBoxCurrentState="unChecked";
     String se2CheckBoxCurrentState="unChecked";
     String os2CheckBoxCurrentState="unChecked";
-    String course1;
-    String course2;
-    String course3;
-        String course4;
-        String course5;
-        String course6;
 
     @FXML
     private Button insertStudentIntoDBButton;
@@ -51,18 +45,18 @@ InsertPage insertPageObj=new InsertPage();
  */
     @FXML
     void AlgorithmsCheckBoxChecked(ActionEvent event) {
-if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&algorithmCheckBoxCurrentState=="unChecked"){
+if(super.availableCoursesForStudent>super.coursesCounter&&algorithmCheckBoxCurrentState=="unChecked"){
    algorithmCheckBoxCurrentState="checked";
-   course1="Algorithms";
-    insertPageObj.coursesCounter++;
+   student.studentCourse1="Algorithms";
+    super.coursesCounter++;
 }else if(algorithmCheckBoxCurrentState=="checked"){
     algorithmCheckBoxCurrentState="unChecked";
     AlgorithmsCheckBox.setSelected(false);
-    course1="";
-    insertPageObj.coursesCounter--;
+    student.studentCourse1="";
+    super.coursesCounter--;
 }
 else{
-    System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+    System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
     AlgorithmsCheckBox.setSelected(false);
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle("Choosing Courses Error !");
@@ -79,18 +73,18 @@ else{
  */
     @FXML
     void artificialIntellegenceCheckBoxChecked(ActionEvent event) {
-        if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&aiCheckBoxCurrentState=="unChecked"){
+        if(super.availableCoursesForStudent>super.coursesCounter&&aiCheckBoxCurrentState=="unChecked"){
             aiCheckBoxCurrentState="checked";
-            course2="Artificail Intellegence";
-            insertPageObj.coursesCounter++;
+            student.studentCourse2="Artificail Intellegence";
+            super.coursesCounter++;
         }else if(aiCheckBoxCurrentState=="checked"){
             algorithmCheckBoxCurrentState="unChecked";
             AlgorithmsCheckBox.setSelected(false);
-            course2="";
-            insertPageObj.coursesCounter--;
+            student.studentCourse2="";
+            super.coursesCounter--;
         }
         else{
-            System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+            System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
             artificialIntellegenceCheckBox.setSelected(false);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
@@ -106,18 +100,18 @@ else{
  */
     @FXML
     void cloudComputingCheckBoxChecked(ActionEvent event) {
-        if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&cloudComputingCheckBoxCurrentState=="unChecked"){
+        if(super.availableCoursesForStudent>super.coursesCounter&&cloudComputingCheckBoxCurrentState=="unChecked"){
             cloudComputingCheckBoxCurrentState="checked";
-            course3="Cloud Computing";
-            insertPageObj.coursesCounter++;
+            student.studentCourse3="Cloud Computing";
+            super.coursesCounter++;
         }else if(cloudComputingCheckBoxCurrentState=="checked"){
             cloudComputingCheckBoxCurrentState="unChecked";
             cloudComputingCheckBox.setSelected(false);
-            course3="";
-            insertPageObj.coursesCounter--;
+            student.studentCourse3="";
+            super.coursesCounter--;
         }
         else{
-            System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+            System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
             cloudComputingCheckBox.setSelected(false);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
@@ -133,18 +127,18 @@ else{
  */
     @FXML
     void operatingSystem2CheckBoxChecked(ActionEvent event) {
-        if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&os2CheckBoxCurrentState=="unChecked"){
+        if(super.availableCoursesForStudent>super.coursesCounter&&os2CheckBoxCurrentState=="unChecked"){
             os2CheckBoxCurrentState="checked";
-            course4="Operating System2";
-            insertPageObj.coursesCounter++;
+            student.studentCourse4="Operating System2";
+            super.coursesCounter++;
         }else if(os2CheckBoxCurrentState=="checked"){
             os2CheckBoxCurrentState="unChecked";
             operatingSystem2CheckBox.setSelected(false);
-            course4="";
-            insertPageObj.coursesCounter--;
+            student.studentCourse4="";
+            super.coursesCounter--;
         }
         else{
-            System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+            System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
             operatingSystem2CheckBox.setSelected(false);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
@@ -160,18 +154,18 @@ else{
  */
     @FXML
     void programming3CheckBoxChecked(ActionEvent event) {
-        if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&programming3CheckBoxCurrentState=="unChecked"){
+        if(super.availableCoursesForStudent>super.coursesCounter&&programming3CheckBoxCurrentState=="unChecked"){
             programming3CheckBoxCurrentState="checked";
-            course5="Programming 3";
-            insertPageObj.coursesCounter++;
+            student.studentCourse5="Programming 3";
+            super.coursesCounter++;
         }else if(programming3CheckBoxCurrentState=="checked"){
             programming3CheckBoxCurrentState="unChecked";
             programming3CheckBox.setSelected(false);
-            course5="";
-            insertPageObj.coursesCounter--;
+            student.studentCourse5="";
+            super.coursesCounter--;
         }
         else{
-            System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+            System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
             programming3CheckBox.setSelected(false);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
@@ -188,18 +182,18 @@ else{
  */
     @FXML
     void softwareEngineering2CheckBoxChecked(ActionEvent event) {
-        if(insertPageObj.availableCoursesForStudent>insertPageObj.coursesCounter&&se2CheckBoxCurrentState=="unChecked"){
+        if(super.availableCoursesForStudent>super.coursesCounter&&se2CheckBoxCurrentState=="unChecked"){
             se2CheckBoxCurrentState="checked";
-            course6="Software Engineering 2";
-            insertPageObj.coursesCounter++;
+            student.studentCourse6="Software Engineering 2";
+            super.coursesCounter++;
         }else if(se2CheckBoxCurrentState=="checked"){
             se2CheckBoxCurrentState="unChecked";
             softwareEngineering2CheckBox.setSelected(false);
-            course6="";
-            insertPageObj.coursesCounter--;
+            student.studentCourse6="";
+            super.coursesCounter--;
         }
         else{
-            System.out.println("Avilable Courses = "+insertPageObj.availableCoursesForStudent+"and Choosen Courses = "+insertPageObj.coursesCounter);
+            System.out.println("Avilable Courses = "+super.availableCoursesForStudent+"and Choosen Courses = "+super.coursesCounter);
             softwareEngineering2CheckBox.setSelected(false);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
@@ -211,11 +205,23 @@ else{
 
     @FXML
     void addStudentToDB(ActionEvent event) {
-insertPageObj.getStudentCourses(course1,course2,course3,course4,course5,course6);
-       insertPageObj.displayCourses();
+        System.out.println("Student that inesrt page mention for -> "+student);
+        System.out.println("name -> "+student.studentName);
+        System.out.println("national id -> "+student.nationalId);
+        System.out.println("JPA -> "+student.studentJPA);
+        System.out.println("Section -> "+student.studentSection);
+        System.out.println("Level -> "+student.studentLevel);
+        System.out.println("Department -> "+student.studentDepartment);
+        System.out.println("course 1 -> "+student.studentCourse1);
+        System.out.println("course 2 -> "+student.studentCourse2);
+        System.out.println("course 3 -> "+student.studentCourse3);
+        System.out.println("course 4 -> "+student.studentCourse4);
+        System.out.println("course 5 -> "+student.studentCourse5);
+        System.out.println("course 6 -> "+student.studentCourse6);
        try{
-
-           new StudentsDataBase().insertNewStudentIntoStudentDataBase(insertPageObj.getStudentInfoToBeInsertedInDataBase());
+          // displayStudentInfo();
+           new StudentsDataBase().insertNewStudentIntoStudentDataBase(student);
+           System.out.println("inserting student in database done successfully ##");
        }catch (Exception e){
            System.out.println("Error while insertring student inside the database");
        }
@@ -224,7 +230,7 @@ insertPageObj.getStudentCourses(course1,course2,course3,course4,course5,course6)
         }catch (Exception e){
             System.out.println("Error when moving from Courses page to insert Page !! ");
         }
-          insertPageObj.setInsertPageEmpty();
+          super.setInsertPageEmpty();
     }
 
 }

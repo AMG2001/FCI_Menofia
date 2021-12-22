@@ -11,29 +11,31 @@ public StudentsDataBase(){
     try{
         connectionObj=DriverManager.getConnection(host,user,password); // it always throw exception
         System.out.println("Connection with Students Database Done ## ");
-//            Statement stmt = connectionObj.createStatement();
-//        try{
-//            String sqlCommnad = "CREATE TABLE STUDENTINFO " +
-//                    "(id INTEGER not NULL AUTO_INCREMENT, " +
-//                    " name TEXT " +
-//                    " level TEXT " +
-//                    "department TEXT"+
-//                    "section TEXT " +
-//                    "jpa DOUBLE"+
-//                    "course1 TEXT"+
-//                    "course2 TEXT"+
-//                    "course3 TEXT"+
-//                    "course4 TEXT"+
-//                    "course5 TEXT"+
-//                    "course6 TEXT"+
-//                    "nationalid BIGINT "+
-//                    "CONSTRAINT PK1 PRIMARY KEY (nationalid) ";
-//            stmt.execute(sqlCommnad);
-//            System.out.println("student table created successfully !!");
-//        }catch (Exception e){
-//            System.out.println("error done while creating student table");
-//        }
-//            connectionObj.close(); // close the connection with DB for security puproses .
+            Statement stmt = connectionObj.createStatement();
+        try{
+            String studentTableCreationSqlCommnad = "CREATE TABLE STUDENTSDATABASE.STUDENTSINFO( " +
+                    "NAME TEXT , " +
+                    "LEVEL TEXT ," +
+                    " DEPARTMENT TEXT," +
+                    " SECTION TEXT ," +
+                    " JPA DOUBLE ," +
+                    " COURSE1 TEXT , " +
+                    "COURSE2 TEXT ," +
+                    " COURSE3 TEXT," +
+                    " COURSE4 TEXT, " +
+                    "COURSE5 TEXT, " +
+                    "COURSE6 TEXT," +
+                    " NATIONALID BIGINT," +
+                    " CONSTRAINT PK1 PRIMARY KEY (NATIONALID)" +
+                    " );";
+            System.out.println(studentTableCreationSqlCommnad);
+            stmt.execute(studentTableCreationSqlCommnad);
+
+            System.out.println("student table created successfully !!");
+        }catch (Exception e){
+            System.out.println("error done while creating student table");
+        }
+            connectionObj.close(); // close the connection with DB for security puproses .
         } catch(Exception e){
         System.out.println("There is an error while Connection with students database !!");
     }
@@ -43,23 +45,30 @@ public StudentsDataBase(){
 * insert student into database
 *
  */
-public void insertNewStudentIntoStudentDataBase(StudentInfo studentObj)throws  Exception{
-    connectionObj=DriverManager.getConnection(host,user,password);
-    System.out.println("Connection with Students Database Done ## ");
-    Statement stmt = connectionObj.createStatement();
-    String insetStudentSqlCommand="INSERT INTO studentsdatabase('name,level,department,jpa,section,course1,course2,course3,course4,course5,course6,nationalid') VALUES ("+studentObj.studentName+
-            ", "+studentObj.studentLevel+
-            ", "+studentObj.studentDepartment+
-            ", "+studentObj.studentSection+
-            ", "+studentObj.studentJPA+
-            ", "+studentObj.studentCourse1+
-            ", "+studentObj.studentCourse2+
-            ", "+studentObj.studentCourse3+
-            ", "+studentObj.studentCourse4+
-            ", "+studentObj.studentCourse5+
-            ", "+studentObj.studentCourse6+
-            ", "+studentObj.nationalId+
-            ";";
-    stmt.execute(insetStudentSqlCommand);
+public void insertNewStudentIntoStudentDataBase(StudentInfo studentObj){
+   try{
+       connectionObj=DriverManager.getConnection(host,user,password);
+       System.out.println("Connection with Students Database Done ## ");
+       Statement stmt = connectionObj.createStatement();
+       String insetStudentSqlCommand="INSERT INTO studentsdatabase.studentsinfo " +
+               "VALUES( \""+studentObj.studentName+
+               "\",\" "+studentObj.studentLevel+
+               "\",\" "+studentObj.studentDepartment+
+               "\",\""+studentObj.studentSection+
+               "\","+studentObj.studentJPA+
+               ",\" "+studentObj.studentCourse1+
+               "\",\" "+studentObj.studentCourse2+
+               "\",\" "+studentObj.studentCourse3+
+               "\",\" "+studentObj.studentCourse4+
+               "\",\" "+studentObj.studentCourse5+
+               "\",\" "+studentObj.studentCourse6+
+               "\",\" "+studentObj.nationalId+
+               "\");";
+       System.out.println(insetStudentSqlCommand);
+       stmt.execute(insetStudentSqlCommand);
+   }catch (Exception e){
+       System.out.println("Error done while perform insert Student in database");
+   }
+
 }
 }

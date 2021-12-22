@@ -7,30 +7,7 @@ import student.StudentInfo;
 
 
 public class InsertPage {
-
-StudentInfo student=new StudentInfo();
-// this Function is used to get Courses from SE Courses page
-public void getStudentCourses(String studentCourse1,
-                          String studentCourse2,
-                          String studentCourse3,
-                          String studentCourse4,
-                          String studentCourse5,
-                          String studentCourse6){
-    student.studentCourse1=studentCourse1;
-    student.studentCourse2=studentCourse2;
-    student.studentCourse3=studentCourse3;
-    student.studentCourse4=studentCourse4;
-    student.studentCourse5=studentCourse5;
-    student.studentCourse6=studentCourse6;
-}
-public void displayCourses(){
-    System.out.println("course 1 -> "+student.studentCourse1);
-    System.out.println("course 2 -> "+student.studentCourse2);
-    System.out.println("course 3 -> "+student.studentCourse3);
-    System.out.println("course 4 -> "+student.studentCourse4);
-    System.out.println("course 5 -> "+student.studentCourse5);
-    System.out.println("course 6 -> "+student.studentCourse6);
-}
+public static StudentInfo student=new StudentInfo();
     @FXML
     private RadioButton BioRadioButton;
 
@@ -85,8 +62,10 @@ public void displayCourses(){
     boolean nationalIdIsTrue=false;
     boolean jpaIsTrue=false;
     boolean sectionIsTrue=false;
-    public static  int availableCoursesForStudent=0;
-    public static  int coursesCounter=0;
+    public   static int availableCoursesForStudent=0;
+    public   static int coursesCounter=0;
+    public String studentName;
+    String studentNationalId;
     /*
     *
     * Functions Section ->
@@ -125,6 +104,27 @@ public void displayCourses(){
         System.out.println("error while make Insert Page empty");
     }
     }
+
+    // Function used to display the students courses
+//    public void displayStudentInfo(){
+//        System.out.println("Student onj in level3SE page -> "+student);
+//        System.out.println("name -> "+student.studentName);
+//        System.out.println("national id -> "+student.nationalId);
+//        System.out.println("JPA -> "+student.studentJPA);
+//        System.out.println("Section -> "+student.studentSection);
+//        System.out.println("Level -> "+student.studentLevel);
+//        System.out.println("Department -> "+student.studentDepartment);
+//        System.out.println("course 1 -> "+student.studentCourse1);
+//        System.out.println("course 2 -> "+student.studentCourse2);
+//        System.out.println("course 3 -> "+student.studentCourse3);
+//        System.out.println("course 4 -> "+student.studentCourse4);
+//        System.out.println("course 5 -> "+student.studentCourse5);
+//        System.out.println("course 6 -> "+student.studentCourse6);
+//        System.out.println();
+//        System.out.println();
+//    }
+
+
     // choosing the department is starting from level 3
     @FXML
     void level1RadioButtonSelected(ActionEvent event) {
@@ -156,7 +156,7 @@ public void displayCourses(){
     }
     /*
     *
-    * goToCoursesPage Button ->
+    * goToCoursesPage Button ("Next") ->
     *
     *
      */
@@ -183,7 +183,7 @@ public void displayCourses(){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Name Input Error !");
             alert.setHeaderText("Error in Name Field");
-            alert.setContentText("this is not a name !!");
+            alert.setContentText("this is not invalid name !!");
             alert.showAndWait();
         }
         else{
@@ -391,6 +391,7 @@ public void displayCourses(){
         }else{
             if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()){
                 new CustomFunctions().gotToScene(goToCoursesPage,"SeLevel3Courses.fxml");
+                System.out.println("student obj in insert page -> "+student);
                 System.out.println("Student name is -> "+student.studentName);
                 System.out.println("Student National id is -> "+student.nationalId);
                 System.out.println("Student JPA is -> "+student.studentJPA);
@@ -398,10 +399,10 @@ public void displayCourses(){
                 System.out.println("Student level is -> "+student.studentLevel);
                 System.out.println("Student department is -> "+student.studentDepartment);
                 System.out.println("Number of Avilable Courses -> "+availableCoursesForStudent+"\n");
+                System.out.println("Student that insert page mention for -> "+student);
+                System.out.println();
+                System.out.println();
             }
         }
-    }
-    public StudentInfo getStudentInfoToBeInsertedInDataBase(){
-        return student;
     }
 }
