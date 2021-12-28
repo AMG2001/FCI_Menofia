@@ -33,6 +33,9 @@ public static StudentInfo student=new StudentInfo();
     private RadioButton SeRadioButton;
 
     @FXML
+    private Button goToMainPageButton;
+
+    @FXML
     private TextField jpaTextField;
 
     @FXML
@@ -123,6 +126,12 @@ public static StudentInfo student=new StudentInfo();
 //        System.out.println();
 //        System.out.println();
 //    }
+
+    // Main Page Button Functionallity ->
+    @FXML
+    void goToMainPageFunction(ActionEvent event) {
+new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
+    }
 
 
     // choosing the department is starting from level 3
