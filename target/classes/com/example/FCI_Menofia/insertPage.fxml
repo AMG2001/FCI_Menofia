@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.InsertPage">
    <children>
-      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-text-fill: white;" text="&lt;- Back To main">
+      <Button fx:id="goToMainPageButton" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToMainPageFunction" style="-fx-background-color: red; -fx-text-fill: white;" text="&lt;- Back To main">
          <font>
             <Font size="14.0" />
          </font></Button>
