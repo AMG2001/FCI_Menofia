@@ -229,7 +229,9 @@ else{
             new CustomFunctions().gotToScene(insertStudentIntoDBButton,"insertPage.fxml");
         }catch (Exception e){
             System.out.println("Error when moving from Courses page to insert Page !! ");
-        }
+        }finally {
+
+       }
           super.setInsertPageEmpty();
     }
 

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FCI_Menofia" target="17" />
+      <module name="FCI_Menofia" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

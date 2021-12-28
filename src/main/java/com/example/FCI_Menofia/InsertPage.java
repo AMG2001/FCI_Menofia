@@ -75,7 +75,7 @@ public static StudentInfo student=new StudentInfo();
     // this Function is called by courses page -
     // after choosing courses and then clicking done ..
     // the insertion query is sent to DB and GUI Back to insert Page
-    // when you return .. the all data and Controllers will be reseted .
+    // when you return . the all data and Controllers will be reseted .
     public void setInsertPageEmpty(){
     try{
         allIsTrue=false;

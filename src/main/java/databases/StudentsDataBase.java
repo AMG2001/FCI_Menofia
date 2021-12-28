@@ -36,6 +36,7 @@ public StudentsDataBase(){
             System.out.println("error done while creating student table");
         }
             connectionObj.close(); // close the connection with DB for security puproses .
+        System.out.println("Connection colsed ##");
         } catch(Exception e){
         System.out.println("There is an error while Connection with students database !!");
     }
