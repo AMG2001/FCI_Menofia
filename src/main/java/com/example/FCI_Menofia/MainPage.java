@@ -20,7 +20,7 @@ public class MainPage {
 
         @FXML
         void goToDeleteScreen(ActionEvent event) {
-//new CustomFunctions().gotToScene(deleteButton,);
+new CustomFunctions().gotToScene(deleteButton,"displayStudents.fxml");
         }
 
         @FXML
@@ -36,10 +36,9 @@ new CustomFunctions().gotToScene(searchButton,"searchPage.fxml");
         void goToInsertScreen(ActionEvent event) {
 new CustomFunctions().gotToScene(insertButton,"insertPage.fxml");
         }
-
         @FXML
         void goToUpdateScreen(ActionEvent event) {
-
+new CustomFunctions().gotToScene(updateButton,"updatePage.fxml");
         }
 
     }

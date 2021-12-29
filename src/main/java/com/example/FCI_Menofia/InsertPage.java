@@ -108,31 +108,11 @@ public static StudentInfo student=new StudentInfo();
     }
     }
 
-    // Function used to display the students courses
-//    public void displayStudentInfo(){
-//        System.out.println("Student onj in level3SE page -> "+student);
-//        System.out.println("name -> "+student.studentName);
-//        System.out.println("national id -> "+student.nationalId);
-//        System.out.println("JPA -> "+student.studentJPA);
-//        System.out.println("Section -> "+student.studentSection);
-//        System.out.println("Level -> "+student.studentLevel);
-//        System.out.println("Department -> "+student.studentDepartment);
-//        System.out.println("course 1 -> "+student.studentCourse1);
-//        System.out.println("course 2 -> "+student.studentCourse2);
-//        System.out.println("course 3 -> "+student.studentCourse3);
-//        System.out.println("course 4 -> "+student.studentCourse4);
-//        System.out.println("course 5 -> "+student.studentCourse5);
-//        System.out.println("course 6 -> "+student.studentCourse6);
-//        System.out.println();
-//        System.out.println();
-//    }
-
     // Main Page Button Functionallity ->
     @FXML
     void goToMainPageFunction(ActionEvent event) {
 new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
     }
-
 
     // choosing the department is starting from level 3
     @FXML

@@ -52,7 +52,7 @@ if(super.availableCoursesForStudent>super.coursesCounter&&algorithmCheckBoxCurre
 }else if(algorithmCheckBoxCurrentState=="checked"){
     algorithmCheckBoxCurrentState="unChecked";
     AlgorithmsCheckBox.setSelected(false);
-    student.studentCourse1="";
+    student.studentCourse1=null;
     super.coursesCounter--;
 }
 else{
@@ -80,7 +80,7 @@ else{
         }else if(aiCheckBoxCurrentState=="checked"){
             algorithmCheckBoxCurrentState="unChecked";
             AlgorithmsCheckBox.setSelected(false);
-            student.studentCourse2="";
+            student.studentCourse2=null;
             super.coursesCounter--;
         }
         else{
@@ -107,7 +107,7 @@ else{
         }else if(cloudComputingCheckBoxCurrentState=="checked"){
             cloudComputingCheckBoxCurrentState="unChecked";
             cloudComputingCheckBox.setSelected(false);
-            student.studentCourse3="";
+            student.studentCourse3=null;
             super.coursesCounter--;
         }
         else{
@@ -134,7 +134,7 @@ else{
         }else if(os2CheckBoxCurrentState=="checked"){
             os2CheckBoxCurrentState="unChecked";
             operatingSystem2CheckBox.setSelected(false);
-            student.studentCourse4="";
+            student.studentCourse4=null;
             super.coursesCounter--;
         }
         else{
@@ -161,7 +161,7 @@ else{
         }else if(programming3CheckBoxCurrentState=="checked"){
             programming3CheckBoxCurrentState="unChecked";
             programming3CheckBox.setSelected(false);
-            student.studentCourse5="";
+            student.studentCourse5=null;
             super.coursesCounter--;
         }
         else{
@@ -189,7 +189,7 @@ else{
         }else if(se2CheckBoxCurrentState=="checked"){
             se2CheckBoxCurrentState="unChecked";
             softwareEngineering2CheckBox.setSelected(false);
-            student.studentCourse6="";
+            student.studentCourse6=null;
             super.coursesCounter--;
         }
         else{
@@ -230,9 +230,20 @@ else{
         }catch (Exception e){
             System.out.println("Error when moving from Courses page to insert Page !! ");
         }finally {
-
+           student.studentName=null;
+           student.studentLevel=null;
+           student.studentDepartment=null;
+           student.studentJPA=0.0;
+           student.studentSection=null;
+           student.studentCourse1=null;
+           student.studentCourse2=null;
+           student.studentCourse3=null;
+           student.studentCourse4=null;
+           student.studentCourse5=null;
+           student.studentCourse6=null;
+           super.setInsertPageEmpty();
        }
-          super.setInsertPageEmpty();
+
     }
 
 }
