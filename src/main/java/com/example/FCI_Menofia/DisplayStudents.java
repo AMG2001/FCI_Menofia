@@ -19,7 +19,8 @@ public class DisplayStudents  implements Initializable {
 
 private String url="jdbc:mysql://localhost/studentsdatabase";
 private String ResourceBundle="resources";
-
+    @FXML
+    private Button backToMainPage;
     @FXML
     private TableColumn<modeltabel, String> course1;
 
@@ -65,21 +66,11 @@ private String ResourceBundle="resources";
     @FXML
     private Button delbutton;
 
-    @FXML
-    private Button delrow;
-
-
-    @FXML
-    private TextField nationalIdForsearch;
-
-    @FXML
-    private Button searchbutton;
-
-
     ObservableList<modeltabel> oblist = FXCollections.observableArrayList();
 
-    public void displayStudents(){
+    public void displayStudents(){ // Function to display all student in table
         try{
+            tabel.getItems().clear(); // function that used to clear the content of the table
             Connection con=DBconnector.getconnection();
             System.out.println("Connection with database done  ## in display page");
             ResultSet rs=con.createStatement().executeQuery("select * from studentsdatabase.studentsinfo;");
@@ -111,7 +102,10 @@ private String ResourceBundle="resources";
         displayStudents();
     }
 
-
+    @FXML
+    void backToMainPage(ActionEvent event) {
+new CustomFunctions().gotToScene(backToMainPage,"mainPage.fxml");
+    }
     modeltabel m=new modeltabel();
 
 
@@ -125,6 +119,7 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
             Statement stmt=con.createStatement();
            try{
                stmt.execute(deletingStudentSqlCommand);
+               displayStudents();
            }catch (Exception e){
                System.out.println("Entered value is not allowed !! ");
            }
@@ -132,21 +127,5 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
             System.out.println("Error in db while deleting student !!");
         }
     }
-
-    @FXML
-    void deletedatafromtabel(ActionEvent event) {
-        int selectedIndex = tabel.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            tabel.getItems().remove(selectedIndex);
-
-        }
-    }
-
-    @FXML
-    void searchStudentFromDatabase(ActionEvent event) {
-
-    }
-
-
 
 }

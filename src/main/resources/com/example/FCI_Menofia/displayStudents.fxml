@@ -6,11 +6,12 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="583.0" prefWidth="1099.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.DisplayStudents">
    <children>
-      <Label layoutX="315.0" layoutY="14.0" prefHeight="17.0" prefWidth="137.0" text="display form" textFill="#cd1111">
+      <Label layoutX="809.0" layoutY="40.0" prefHeight="17.0" prefWidth="137.0" text="display form" textFill="#cd1111">
          <font>
             <Font size="24.0" />
          </font>
@@ -31,10 +32,12 @@
             <TableColumn fx:id="nationalid" prefWidth="172.0" text="national ID" />
         </columns>
       </TableView>
-      <Button fx:id="delbutton" layoutX="17.0" layoutY="140.0" mnemonicParsing="false" onAction="#deleteStudentFromDatabase" prefHeight="30.0" prefWidth="145.0" text="delete from database" />
-      <TextField fx:id="nationalIdForDelete" layoutX="17.0" layoutY="58.0" prefHeight="26.0" prefWidth="220.0" promptText="national id" />
-      <Button fx:id="delrow" layoutX="24.0" layoutY="101.0" mnemonicParsing="false" onAction="#deletedatafromtabel" prefHeight="30.0" prefWidth="131.0" text="delete from tabel" />
-      <TextField fx:id="nationalIdForsearch" layoutX="435.0" layoutY="58.0" />
-      <Button fx:id="searchbutton" layoutX="435.0" layoutY="101.0" mnemonicParsing="false" onAction="#searchStudentFromDatabase" prefHeight="30.0" prefWidth="165.0" text="search from database" />
+      <Button fx:id="backToMainPage" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;- Back to main page" />
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="65.0" prefHeight="100.0" prefWidth="413.0" spacing="40.0">
+         <children>
+            <Button fx:id="delbutton" mnemonicParsing="false" onAction="#deleteStudentFromDatabase" prefHeight="30.0" prefWidth="145.0" text="delete from database" />
+            <TextField fx:id="nationalIdForDelete" prefHeight="26.0" prefWidth="220.0" promptText="national id" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

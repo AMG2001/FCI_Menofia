@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage){
        try{
-           FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("displaystudents.fxml"));
+           FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mainPage.fxml"));
            Scene scene = new Scene(fxmlLoader.load(),800,600);
            stage.setTitle("Insert New Student..");
            stage.setScene(scene);

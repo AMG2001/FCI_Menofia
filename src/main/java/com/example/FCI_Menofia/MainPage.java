@@ -8,6 +8,8 @@ public class MainPage {
     private Button deleteButton;
 
     @FXML
+    private Button searchButton;
+    @FXML
     private Button displayButton;
 
     @FXML
@@ -23,8 +25,12 @@ public class MainPage {
 
         @FXML
         void goToDisplayScreen(ActionEvent event) {
-//new CustomFunctions().gotToScene(displayButton,"");
+new CustomFunctions().gotToScene(displayButton,"displayStudents.fxml");
         }
+    @FXML
+    void goToSearchButton(ActionEvent event) {
+new CustomFunctions().gotToScene(searchButton,"searchPage.fxml");
+    }
 
         @FXML
         void goToInsertScreen(ActionEvent event) {
