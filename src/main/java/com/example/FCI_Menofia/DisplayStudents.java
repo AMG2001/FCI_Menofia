@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import student.StudentInfo;
 
 import java.net.URL;
 import java.sql.*;
@@ -16,8 +17,8 @@ import java.util.ResourceBundle;
 
 
 public class DisplayStudents  implements Initializable {
-
-private String url="jdbc:mysql://localhost/studentsdatabase";
+    public static StudentInfo student=new StudentInfo();
+    private String url="jdbc:mysql://localhost/studentsdatabase";
 private String ResourceBundle="resources";
     @FXML
     private Button backToMainPage;
@@ -66,9 +67,16 @@ private String ResourceBundle="resources";
     @FXML
     private Button delbutton;
 
+    boolean nationalidIsTrue=false;
+
+    boolean allIsTrue=false;
+
+
+
     ObservableList<modeltabel> oblist = FXCollections.observableArrayList();
 
     public void displayStudents(){ // Function to display all student in table
+
         try{
             tabel.getItems().clear(); // function that used to clear the content of the table
             Connection con=DBconnector.getconnection();
@@ -111,7 +119,9 @@ new CustomFunctions().gotToScene(backToMainPage,"mainPage.fxml");
 
     @FXML
     void deleteStudentFromDatabase(ActionEvent event) {
-String nationalId=nationalIdForDelete.getText();
+        allIsTrue=false;
+        nationalidIsTrue=false;
+ String nationalId=nationalIdForDelete.getText();
 String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo where nationalid = "+nationalId+";";
         try{
             Connection con=DBconnector.getconnection();
@@ -126,6 +136,53 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
         }catch (Exception e){
             System.out.println("Error in db while deleting student !!");
         }
+
+        /*
+         *
+         * National id checking
+         *
+         */
+        // get national id of student
+        student.nationalId=nationalIdForDelete.getText();
+        // check if the inputted National id is correct or not ->
+        if(nationalIdForDelete.getText()==""){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("National ID Input Error !");
+            alert.setHeaderText("you can't leave National ID Field empty ");
+            alert.setContentText("Student National id must be inserted !! ");
+            alert.showAndWait();
+        }
+
+        else if (student.nationalId.length() != 14) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("National ID Input Error !");
+            alert.setHeaderText("Error in National ID Field");
+            alert.setContentText("National id can't be less than 14 Digit !! ");
+            alert.showAndWait();
+        }
+
+        // TODO
+        // if the id is not exist in database .
+//
+//        else{
+//            System.out.println("national id in text Field -> "+nationalIdForDelete.getText());
+//            System.out.println("local national id -> "+nationalId);
+//            if (nationalIdForDelete.getText() != nationalId ) {
+//
+//                Alert alert = new Alert(Alert.AlertType.ERROR);
+//                alert.setTitle("National ID Input Error !");
+//                alert.setHeaderText("Error in National ID Field");
+//                alert.setContentText("this id not found!! ");
+//                alert.showAndWait();
+//            }
+//        }
+
+
+
+
+
     }
+
+
 
 }

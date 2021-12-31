@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
@@ -52,6 +49,7 @@ public class SearchPage {
 
     @FXML
     private Button searchButton;
+
     ObservableList<modeltabel> oblist = FXCollections.observableArrayList();
     @FXML
     private TextField searchTextField;
@@ -66,8 +64,8 @@ new CustomFunctions().gotToScene(backToMainPageButton,"mainPage.fxml");
 
     @FXML
     void searchForStudentInDatabaseUsingNationalId(ActionEvent event) {
-        String studentNationalId=searchTextField.getText();
         try{
+            String studentNationalId=searchTextField.getText();
             tabel.getItems().clear(); // function that used to clear the content of the delete page
             Connection con=DBconnector.getconnection();
             System.out.println("Connection with database done  ## in display page");
@@ -80,7 +78,6 @@ new CustomFunctions().gotToScene(backToMainPageButton,"mainPage.fxml");
         }catch (Exception e){
             System.out.println("Error while connecting with database in display page");
         }
-
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         level.setCellValueFactory(new PropertyValueFactory<>("level"));
         department.setCellValueFactory(new PropertyValueFactory<>("department"));
@@ -93,6 +90,8 @@ new CustomFunctions().gotToScene(backToMainPageButton,"mainPage.fxml");
         course5.setCellValueFactory(new PropertyValueFactory<>("course5"));
         course6.setCellValueFactory(new PropertyValueFactory<>("course6"));
         tabel.setItems(oblist);
+
+        }
+
     }
 
-}
