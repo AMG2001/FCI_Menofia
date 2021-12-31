@@ -10,5 +10,7 @@ module com.example.studentapp123456 {
     exports com.example.FCI_Menofia;
     exports student;
     exports com.example.FCI_Menofia.CoursesScenesBackend;
+    exports com.example.FCI_Menofia.signUp;
+    opens com.example.FCI_Menofia.signUp  to javafx.controls, javafx.fxml, javafx.graphics;
     opens com.example.FCI_Menofia.CoursesScenesBackend to javafx.controls, javafx.fxml, javafx.graphics;
 }

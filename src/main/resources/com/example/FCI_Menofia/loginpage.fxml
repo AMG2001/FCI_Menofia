@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: ppjpg;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.signUp.loginpage">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: ppjpg;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.signUp.loginpage">
    <children>
       <Label layoutX="14.0" layoutY="101.0" prefHeight="17.0" prefWidth="100.0" text=" User name:">
          <font>
@@ -23,12 +23,12 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="loginbutton" layoutX="28.0" layoutY="217.0" mnemonicParsing="false" onAction="#signinbuttonfunction" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: gold;" text="Sign In" textFill="#b81434">
+      <Button fx:id="loginbutton" layoutX="236.0" layoutY="224.0" mnemonicParsing="false" onAction="#signinbuttonfunction" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: gold;" text="Sign In" textFill="#b81434">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="signupbuuton" layoutX="357.0" layoutY="316.0" mnemonicParsing="false" onAction="#signupbuutonfunction" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: gold;" text="Sign Up !" textFill="#d31111" underline="true">
+      <Button fx:id="signupbuuton" layoutX="377.0" layoutY="336.0" mnemonicParsing="false" onAction="#signupbuutonfunction" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: gold;" text="Sign Up !" textFill="#d31111" underline="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="322.0" text="Don't Have an account !!" textFill="#0b1ae1">
+      <Label layoutX="155.0" layoutY="342.0" text="Don't Have an account !!" textFill="#0b1ae1">
          <font>
             <Font size="18.0" />
          </font>

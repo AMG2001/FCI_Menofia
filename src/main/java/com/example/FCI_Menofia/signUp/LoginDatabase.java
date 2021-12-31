@@ -1,15 +1,14 @@
-package login.signUp;
+package com.example.FCI_Menofia.signUp;
 
 import com.example.FCI_Menofia.DBconnector;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class LoginDatabase {
 static Connection connection;
 String sqlCommand;
-LoginDatabase(){
+ public LoginDatabase(){
     try{
 
         connection= new DBconnector().getconnection();
