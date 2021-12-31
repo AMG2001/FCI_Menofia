@@ -7,6 +7,10 @@ import javafx.scene.control.TextField;
 import student.StudentInfo;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class UpdatePage {
 
@@ -62,6 +66,38 @@ public class UpdatePage {
     new CustomFunctions().gotToScene(updateInfoButton,"mainPage.fxml");
     }
 
+    public String studentName;
+    public String nationalId;
+    public double studentJPA;
+    public String studentSection;
+    public String studentLevel;
+    public String studentDepartment;
+    public String studentCourse1;
+    public String studentCourse2;
+    public String studentCourse3;
+    public String studentCourse4;
+    public String studentCourse5;
+    public String studentCourse6;
+    HashMap<String,String>studentDataInMap=new HashMap<>();
+
+    // function that used to convert resultSet to map ->
+    private HashMap<String, List<Object>> resultSetToArrayList(ResultSet rs) throws SQLException {
+        ResultSetMetaData md = rs.getMetaData();
+        int columns = md.getColumnCount();
+        HashMap<String, List<Object>> map = new HashMap<>(columns);
+        for (int i = 1; i <= columns; ++i) {
+            map.put(md.getColumnName(i), new ArrayList<>());
+        }
+        while (rs.next()) {
+            for (int i = 1; i <= columns; ++i) {
+                map.get(md.getColumnName(i)).add(rs.getObject(i));
+            }
+        }
+
+        return map;
+    }
+
+
     @FXML
     void getStudentInfoFromDatabase(ActionEvent event) {
         ResultSet resultSet=null;
@@ -71,11 +107,22 @@ public class UpdatePage {
              connection=DBconnector.getconnection();
             Statement stmt=connection.createStatement();
              resultSet=stmt.executeQuery("select * from studentsdatabase.studentsinfo where nationalid = "+nationalId+";");
+            //TODO need to get data from result set and convert it with any datatype to be able to work on with
+
+             System.out.println("********************************");
+            System.out.println("********************************");
+            //studentDataInMap=resultSetToArrayList(resultSet);
+            System.out.println(studentDataInMap);
+            System.out.println("********************************");
+            System.out.println("********************************");
+             System.out.println("ResultSet After execution -> "+resultSet);
         }catch (Exception e){
             System.out.println("Error done while Connecting with database in Update page !!");
         }
 try {
-    System.out.println(resultSet.getString("NAME"));
+    System.out.println("Resultset in printing statement in name field -> "+resultSet);
+    studentName=resultSet.getString("NAME");
+    System.out.println(studentName);
 }catch (Exception e){
     System.out.println("error while getting name from database in Update Page #");
 }
