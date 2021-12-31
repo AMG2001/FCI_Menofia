@@ -1,5 +1,6 @@
 package login.signUp;
 
+import com.example.FCI_Menofia.CustomFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -30,7 +31,7 @@ public class SignUpPage {
 
     @FXML
     void backToLoginPageButtonFunction(ActionEvent event) {
-
+new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
     }
 
     @FXML
