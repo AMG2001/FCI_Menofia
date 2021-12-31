@@ -14,9 +14,9 @@
       <Button fx:id="backToMainPageButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;- Back to main page" />
       <HBox alignment="CENTER" layoutX="14.0" layoutY="70.0" prefHeight="46.0" prefWidth="443.0" spacing="35.0">
          <children>
-            <Label text="Enter student national id :" />
+            <Label text="Enter com.example.FCI_Menofia.student national id :" />
             <TextField fx:id="nationalIdTextField" promptText="National id" />
-            <Button fx:id="getStudentInfo" mnemonicParsing="false" onAction="#getStudentInfoFromDatabase" text="Get student" />
+            <Button fx:id="getStudentInfo" mnemonicParsing="false" onAction="#getStudentInfoFromDatabase" text="Get com.example.FCI_Menofia.student" />
          </children>
       </HBox>
       <VBox layoutX="44.0" layoutY="139.0" prefHeight="477.0" prefWidth="370.0">

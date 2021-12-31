@@ -1,4 +1,4 @@
-package student;
+package com.example.FCI_Menofia.student;
 
 public class StudentInfo {
     public String studentName;

@@ -1,7 +1,7 @@
 package com.example.FCI_Menofia;
 
 import com.example.FCI_Menofia.signUp.LoginDatabase;
-import databases.StudentsDataBase;
+import com.example.FCI_Menofia.databases.StudentsDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage){
        try{
-           FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signUpPage.fxml"));
+           FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mainPage.fxml"));
            Scene scene = new Scene(fxmlLoader.load(),800,600);
            stage.setTitle("Insert New Student..");
            stage.setScene(scene);

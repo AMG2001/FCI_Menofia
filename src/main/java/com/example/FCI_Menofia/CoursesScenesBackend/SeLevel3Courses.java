@@ -2,7 +2,7 @@ package com.example.FCI_Menofia.CoursesScenesBackend;
 
 import com.example.FCI_Menofia.CustomFunctions;
 import com.example.FCI_Menofia.InsertPage;
-import databases.StudentsDataBase;
+import com.example.FCI_Menofia.databases.StudentsDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -61,7 +61,7 @@ else{
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle("Choosing Courses Error !");
     alert.setHeaderText("Extra Courses added !!");
-    alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+    alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
     alert.showAndWait();
 }
     }
@@ -89,7 +89,7 @@ else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
             alert.setHeaderText("Extra Courses added !!");
-            alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+            alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
             alert.showAndWait();
         }
     }
@@ -116,7 +116,7 @@ else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
             alert.setHeaderText("Extra Courses added !!");
-            alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+            alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
             alert.showAndWait();
         }
     }
@@ -143,7 +143,7 @@ else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
             alert.setHeaderText("Extra Courses added !!");
-            alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+            alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
             alert.showAndWait();
         }
     }
@@ -170,7 +170,7 @@ else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
             alert.setHeaderText("Extra Courses added !!");
-            alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+            alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
             alert.showAndWait();
         }
     }
@@ -198,7 +198,7 @@ else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Choosing Courses Error !");
             alert.setHeaderText("Extra Courses added !!");
-            alert.setContentText("you can't add More Courses for this student Depending on his GPA");
+            alert.setContentText("you can't add More Courses for this com.example.FCI_Menofia.student Depending on his GPA");
             alert.showAndWait();
         }
     }
@@ -221,9 +221,9 @@ else{
        try{
           // displayStudentInfo();
            new StudentsDataBase().insertNewStudentIntoStudentDataBase(student);
-           System.out.println("inserting student in database done successfully ##");
+           System.out.println("inserting com.example.FCI_Menofia.student in database done successfully ##");
        }catch (Exception e){
-           System.out.println("Error while insertring student inside the database");
+           System.out.println("Error while insertring com.example.FCI_Menofia.student inside the database");
        }
        try{
             new CustomFunctions().gotToScene(insertStudentIntoDBButton,"insertPage.fxml");

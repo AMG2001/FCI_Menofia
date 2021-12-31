@@ -1,5 +1,5 @@
-package databases;
-import student.StudentInfo;
+package com.example.FCI_Menofia.databases;
+import com.example.FCI_Menofia.student.StudentInfo;
 
 import java.sql.*;
 public class StudentsDataBase {
@@ -31,9 +31,9 @@ public StudentsDataBase(){
             System.out.println(studentTableCreationSqlCommnad);
             stmt.execute(studentTableCreationSqlCommnad);
 
-            System.out.println("student table created successfully !!");
+            System.out.println("com.example.FCI_Menofia.student table created successfully !!");
         }catch (Exception e){
-            System.out.println("error done while creating student table");
+            System.out.println("error done while creating com.example.FCI_Menofia.student table");
         }
             connectionObj.close(); // close the connection with DB for security puproses .
         System.out.println("Connection colsed ##");
@@ -43,7 +43,7 @@ public StudentsDataBase(){
 }
 /*
 *
-* insert student into database
+* insert com.example.FCI_Menofia.student into database
 *
  */
 public void insertNewStudentIntoStudentDataBase(StudentInfo studentObj){

@@ -14,8 +14,8 @@ as ("showScene") ->
   it as built in lib inside our app
 
  // " StudentInfo " is the calss that will contain
-  the whole informations about each student
- and every student inside the DB will be an object from that class .
+  the whole informations about each com.example.FCI_Menofia.student
+ and every com.example.FCI_Menofia.student inside the DB will be an object from that class .
 
 
 

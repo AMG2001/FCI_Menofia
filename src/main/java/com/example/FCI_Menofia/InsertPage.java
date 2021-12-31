@@ -3,7 +3,7 @@ package com.example.FCI_Menofia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import student.StudentInfo;
+import com.example.FCI_Menofia.student.StudentInfo;
 
 
 public class InsertPage {
@@ -156,7 +156,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
          * StudentName Field checking
          *
          */
-        // get Name of student as String
+        // get Name of com.example.FCI_Menofia.student as String
         student.studentName=studentNameTextField.getText();
         if(studentNameTextField.getText()=="") {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -202,7 +202,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
          * National id checking
          *
          */
-        // get national id of student
+        // get national id of com.example.FCI_Menofia.student
         student.nationalId=nationalIdTextField.getText();
         // check if the inputted National id is correct or not ->
         if(nationalIdTextField.getText()==""){
@@ -317,7 +317,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
          * Student Level ->
          *
          */
-        // getting the level of the student
+        // getting the level of the com.example.FCI_Menofia.student
         if(level1RadioButton.isSelected()){
             student.studentLevel="Level 1";
         }
@@ -335,7 +335,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
          * get Student Department ->
          *
          */
-        // getting the department of the student ->
+        // getting the department of the com.example.FCI_Menofia.student ->
         if(SeRadioButton.isSelected()){
             student.studentDepartment="SE";
         }
@@ -380,7 +380,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
         }else{
             if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()){
                 new CustomFunctions().gotToScene(goToCoursesPage,"SeLevel3Courses.fxml");
-                System.out.println("student obj in insert page -> "+student);
+                System.out.println("com.example.FCI_Menofia.student obj in insert page -> "+student);
                 System.out.println("Student name is -> "+student.studentName);
                 System.out.println("Student National id is -> "+student.nationalId);
                 System.out.println("Student JPA is -> "+student.studentJPA);

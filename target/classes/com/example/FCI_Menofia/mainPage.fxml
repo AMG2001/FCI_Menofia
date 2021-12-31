@@ -13,22 +13,22 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../assets/display.jpg" />
+                  <Image url="@assets/display.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="117.0" fitWidth="200.0" layoutX="238.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../assets/delete.jpg" />
+                  <Image url="@assets/delete.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="117.0" fitWidth="200.0" layoutX="456.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../assets/insert.jpg" />
+                  <Image url="@assets/insert.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="117.0" fitWidth="200.0" layoutX="675.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../assets/update.jpg" />
+                  <Image url="@assets/update.jpg" />
                </image>
             </ImageView>
             <Button fx:id="displayButton" layoutX="32.0" layoutY="187.0" mnemonicParsing="false" onAction="#goToDisplayScreen" prefHeight="49.0" prefWidth="164.0" style="-fx-background-color: #ffc46b; -fx-background-radius: 25px;" text="Display">
@@ -61,7 +61,7 @@
       <ImageView fitHeight="264.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="303.0" fitWidth="895.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../assets/background.jpg" />
+            <Image url="@assets/background.jpg" />
          </image>
       </ImageView>
       <Label layoutX="476.0" layoutY="32.0" prefHeight="170.0" prefWidth="405.0" text="شؤون الطلاب                           &#10;Students Affairs&#10;" textFill="#0c358e">

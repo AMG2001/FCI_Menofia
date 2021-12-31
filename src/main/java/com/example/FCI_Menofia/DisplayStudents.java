@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import student.StudentInfo;
+import com.example.FCI_Menofia.student.StudentInfo;
 
 import java.net.URL;
 import java.sql.*;
@@ -75,7 +75,7 @@ private String ResourceBundle="resources";
 
     ObservableList<modeltabel> oblist = FXCollections.observableArrayList();
 
-    public void displayStudents(){ // Function to display all student in table
+    public void displayStudents(){ // Function to display all com.example.FCI_Menofia.student in table
 
         try{
             tabel.getItems().clear(); // function that used to clear the content of the table
@@ -134,7 +134,7 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
                System.out.println("Entered value is not allowed !! ");
            }
         }catch (Exception e){
-            System.out.println("Error in db while deleting student !!");
+            System.out.println("Error in db while deleting com.example.FCI_Menofia.student !!");
         }
 
         /*
@@ -142,7 +142,7 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
          * National id checking
          *
          */
-        // get national id of student
+        // get national id of com.example.FCI_Menofia.student
         student.nationalId=nationalIdForDelete.getText();
         // check if the inputted National id is correct or not ->
         if(nationalIdForDelete.getText()==""){
