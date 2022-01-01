@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="583.0" prefWidth="1099.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.DisplayStudents">
+<AnchorPane prefHeight="583.0" prefWidth="1099.0" scaleShape="false" style="-fx-background-color: #259ce6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.DisplayStudents">
    <children>
-      <Label layoutX="809.0" layoutY="40.0" prefHeight="17.0" prefWidth="137.0" text="display form" textFill="#cd1111">
+      <Label layoutX="10.0" layoutY="138.0" prefHeight="42.0" prefWidth="200.0" text="display form" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="Baskerville Old Face" size="34.0" />
          </font>
       </Label>
       <TableView fx:id="tabel" layoutX="4.0" layoutY="189.0" prefHeight="400.0" prefWidth="1092.0">
@@ -32,12 +32,26 @@
             <TableColumn fx:id="nationalid" prefWidth="172.0" text="national ID" />
         </columns>
       </TableView>
-      <Button fx:id="backToMainPage" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;- Back to main page" />
-      <HBox alignment="CENTER" layoutX="4.0" layoutY="65.0" prefHeight="100.0" prefWidth="413.0" spacing="40.0">
+      <Button fx:id="backToMainPage" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToMainPage" style="-fx-background-color: #ffffff; -fx-background-radius: 50PX;" text=" Back to main page">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <HBox alignment="CENTER" layoutX="214.0" layoutY="130.0" prefHeight="51.0" prefWidth="671.0" spacing="40.0">
          <children>
-            <Button fx:id="delbutton" mnemonicParsing="false" onAction="#deleteStudentFromDatabase" prefHeight="30.0" prefWidth="145.0" text="delete from database" />
-            <TextField fx:id="nationalIdForDelete" prefHeight="26.0" prefWidth="220.0" promptText="national id" />
+            <Button fx:id="delbutton" mnemonicParsing="false" onAction="#deleteStudentFromDatabase" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50PX;" text="delete from database">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Button>
+            <TextField fx:id="nationalIdForDelete" prefHeight="31.0" prefWidth="242.0" promptText="                 National id" style="-fx-background-color: #ffffff; -fx-background-radius: 10PX;">
+               <font>
+                  <Font size="15.0" />
+               </font></TextField>
          </children>
       </HBox>
+      <Label layoutX="326.0" layoutY="14.0" prefHeight="115.0" prefWidth="447.0" text="             Student Database &#10;Management Information System" textFill="WHITE">
+         <font>
+            <Font name="Baskerville Old Face" size="33.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

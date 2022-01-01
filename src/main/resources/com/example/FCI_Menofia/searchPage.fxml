@@ -9,26 +9,32 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="438.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.SearchPage">
+<AnchorPane prefHeight="414.0" prefWidth="841.0" style="-fx-background-color: #259ce6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.SearchPage">
    <children>
-      <Label layoutX="526.0" layoutY="24.0" text="Search Page" textFill="WHITE">
+      <Label layoutX="334.0" layoutY="49.0" text="Search Page" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Baskerville Old Face" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="backToMainPageButton" layoutX="31.0" layoutY="36.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;- back to Main page" />
-      <HBox alignment="CENTER" layoutY="100.0" prefHeight="100.0" prefWidth="526.0" spacing="15.0">
+      <Button fx:id="backToMainPageButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="34.0" prefWidth="138.0" style="-fx-alignment: CENTER; -fx-background-radius: 50PX; -fx-background-color: #ffffff;" text="back to Main page">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <HBox alignment="CENTER" layoutX="97.0" layoutY="100.0" prefHeight="100.0" prefWidth="607.0" spacing="15.0">
          <children>
             <Label text="Enter National id :">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="searchTextField" prefHeight="26.0" prefWidth="210.0" promptText="Search" />
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchForStudentInDatabaseUsingNationalId" text="Search" />
+            <TextField fx:id="searchTextField" prefHeight="38.0" prefWidth="219.0" promptText="Search" style="-fx-alignment: CENTER; -fx-background-radius: 10PX;" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchForStudentInDatabaseUsingNationalId" prefHeight="34.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50PX;" text="Search">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Button>
          </children>
       </HBox>
-      <TableView fx:id="tabel" layoutY="200.0" prefHeight="200.0" prefWidth="839.0">
+      <TableView fx:id="tabel" layoutY="200.0" prefHeight="216.0" prefWidth="841.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="75.0" text="name" />
           <TableColumn fx:id="level" prefWidth="75.0" text="level" />

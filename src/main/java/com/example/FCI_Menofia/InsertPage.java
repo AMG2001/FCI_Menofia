@@ -180,7 +180,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
             char[] nameInCahracters=student.studentName.toCharArray();
             // for each loop to compare
             for(int x:nameInCahracters){
-                if((x>=65&&x<=90)||(x>=97&&x<=122)||x==32){
+                if((x>=65&&x<=90)||(x>=97&&x<=122)||x==32){ // if the item is char or white space
                     allIsTrue=true;
                     nameIsTrue=true;
                 }
@@ -227,7 +227,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
                 for (int x : nationalIdInCahracters) {
                     // if the item is digit then it pass .. else it mean that
                     // it char or special character etc .
-                    if (x < 48 || x > 57) {
+                    if (x < 48 || x > 57) { // Numeric values from String to int
                         nationalIdIsTrue = false;
                         allIsTrue = false;
                         Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -74,5 +74,10 @@
             <Font name="Aldhabi" size="45.0" />
          </font>
       </Label>
+      <Button fx:id="signOutButton" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#signOutFunction" style="-fx-background-color: red;" text="Sign out" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

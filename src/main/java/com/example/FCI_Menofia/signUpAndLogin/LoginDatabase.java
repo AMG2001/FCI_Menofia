@@ -16,6 +16,7 @@ String sqlCommand;
         Statement stmt=connection.createStatement();
         stmt.execute("Create table studentsdatabase.signupdata(FirstName text,LastName text,UserName text,Password text);");
         System.out.println("Sign up table created successfully ##");
+        connection.close();
     }catch (Exception e){
         System.out.println("Error while connecting with database in login page !!");
     }

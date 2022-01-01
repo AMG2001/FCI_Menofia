@@ -17,6 +17,6 @@ public class CustomFunctions {
             System.out.println(e.getMessage());
         }
         Stage window=(Stage)btn.getScene().getWindow();
-        window.setScene(new Scene(root,800,600));
+        window.setScene(new Scene(root));
     }
 }

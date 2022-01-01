@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SignUpPage {
@@ -65,6 +66,11 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
         userName=userNameTextField.getText();
         password=passwordTextField.getText();
         passwordConfirmation=confirmPasswordTextField.getText();
+        System.out.println("First name -> "+firstName);
+        System.out.println("Last name -> "+lastName);
+        System.out.println("userName -> "+userName);
+        System.out.println("password -> "+password);
+        System.out.println("Confirm Password -> "+passwordConfirmation);
         /*
 *
 * Check on first name
@@ -155,7 +161,7 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
                         alert.setContentText("user name can't contain White spaces !!");
                         alert.showAndWait();
                         break;
-                    }else if(x<0||(x>10&&x<65)||(x>90&&x<97)||x>122){
+                    }else if(x<0||(x>10&&x<47)||(x>58&&x<65)||(x>90&&x<97)||x>122){ // user name must be characters and Numbers only
                         userNameIsTure=false;
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("user name Input Error !");
@@ -182,7 +188,7 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
         * passwordField check
         *
          */
-        if(password.length()==0){
+        if(password.length()==0){ // if the Password Field is empty
             passwordIsTrue=false;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("password Input Error !");
@@ -191,7 +197,7 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
             alert.showAndWait();
         }
         else{
-        if(password.length()<8){
+        if(password.length()<8){ // if the password length is less than 8
             passwordIsTrue=false;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("password Input Error !");
@@ -202,7 +208,7 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
         else{
             char[] passwordInCharArray=password.toCharArray();
             for(int x:passwordInCharArray){
-                if(x==32){
+                if(x==32){ // check if the password contain any white spaces .. it's not valid !!
                     passwordIsTrue=false;
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("password Input Error !");
@@ -211,13 +217,32 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
                     alert.showAndWait();
                     break;
                 }
-                else{
+                else{ // the password is right .. pass #
                     passwordIsTrue=true;
                 }
             }
         }
         }
-//TODO password and confirmation password checking + Username problem
+
+        /*
+        *
+        * Confirmation Field Check
+        *
+         */
+
+        if(passwordConfirmation.equals(password)){
+            passwordConfirmationIsTrue=true;
+        }else{
+            passwordConfirmationIsTrue=false;
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("password Confirmation Error !");
+            alert.setHeaderText("Error in password Confirmation Field");
+            alert.setContentText("password and password confirmation must be the same !!");
+            alert.showAndWait();
+        }
+
+
+
     /*
     *
     * Enter data to database ->
@@ -225,18 +250,39 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
      */
         try {
             connection = DBconnector.getconnection();
-            System.out.println("Connection done with database #");
-            String sqlCommand="insert into studentsdatabase.signupdata(FirstName,LastName,UserName,Password) values( \""
-                    +firstName+"\",\""
-                    +lastName+"\",\""
-                    +userName+"\",\""
-                    +password+"\");";
-            System.out.println("SQL Command -> "+sqlCommand);
-            Statement stmt=connection.createStatement();
-            stmt.execute(sqlCommand);
-            System.out.println("Insert new employee to DB Done ##");
-            connection.close();
-        }catch (Exception e){
+            ResultSet rs = connection.createStatement().executeQuery("select * from studentsdatabase.signupdata where UserName = \"" + userName + "\";");
+            // if the user name is already exist .. then give the user error .. else add the new user into database .
+            if (rs.next()) {
+                userNameIsTure = false;
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("user name Input Error !");
+                alert.setHeaderText("Error in user name Field");
+                alert.setContentText("User Name is Already exist .. try another one :) !!");
+                alert.showAndWait();
+            } else {
+                userNameIsTure=true;
+                if ((userNameIsTure == true &&
+                        passwordIsTrue == true &&
+                        firstNameIsTrue == true &&
+                        lastNameIsTrue == true &&
+                        passwordConfirmationIsTrue == true)
+                ) {
+                    String sqlCommand = "insert into studentsdatabase.signupdata(FirstName,LastName,UserName,Password) values( \""
+                            + firstName + "\",\""
+                            + lastName + "\",\""
+                            + userName + "\",\""
+                            + password + "\");";
+                    System.out.println("SQL Command -> " + sqlCommand);
+                    Statement stmt = connection.createStatement();
+                    stmt.execute(sqlCommand);
+                    System.out.println("Insert new employee to DB Done ##");
+                    connection.close();
+                } else {
+                    System.out.println("some thing is not true in all fields !! ");
+                }
+            }
+        }
+        catch (Exception e){
             System.out.println("Error while connecting with database in Sign Up page !! ");
         }
     }

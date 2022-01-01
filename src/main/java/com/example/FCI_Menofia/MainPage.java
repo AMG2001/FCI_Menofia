@@ -6,7 +6,8 @@ import javafx.scene.control.Button;
 public class MainPage {
     @FXML
     private Button deleteButton;
-
+    @FXML
+    private Button signOutButton;
     @FXML
     private Button searchButton;
     @FXML
@@ -40,5 +41,8 @@ new CustomFunctions().gotToScene(insertButton,"insertPage.fxml");
         void goToUpdateScreen(ActionEvent event) {
 new CustomFunctions().gotToScene(updateButton,"updatePage.fxml");
         }
-
+    @FXML
+    void signOutFunction(ActionEvent event) {
+new CustomFunctions().gotToScene(signOutButton,"loginPage.fxml");
+    }
     }
