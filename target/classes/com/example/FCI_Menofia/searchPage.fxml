@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="438.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.SearchPage">
+<AnchorPane prefHeight="438.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.CRUD.SearchPage">
    <children>
       <Label layoutX="526.0" layoutY="24.0" text="Search Page" textFill="WHITE">
          <font>

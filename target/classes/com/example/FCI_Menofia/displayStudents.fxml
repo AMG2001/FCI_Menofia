@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="583.0" prefWidth="1099.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.DisplayStudents">
+<AnchorPane prefHeight="583.0" prefWidth="1099.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.CRUD.DisplayStudents">
    <children>
       <Label layoutX="809.0" layoutY="40.0" prefHeight="17.0" prefWidth="137.0" text="display form" textFill="#cd1111">
          <font>

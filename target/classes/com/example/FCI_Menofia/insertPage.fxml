@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.InsertPage">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FCI_Menofia.CRUD.InsertPage">
    <children>
       <Button fx:id="goToMainPageButton" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToMainPageFunction" style="-fx-background-color: red; -fx-text-fill: white;" text="&lt;- Back To main">
          <font>

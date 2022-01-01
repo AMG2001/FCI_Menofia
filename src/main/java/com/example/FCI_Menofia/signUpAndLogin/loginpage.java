@@ -1,4 +1,4 @@
-package com.example.FCI_Menofia.signUp;
+package com.example.FCI_Menofia.signUpAndLogin;
 
 import com.example.FCI_Menofia.CustomFunctions;
 import javafx.event.ActionEvent;
