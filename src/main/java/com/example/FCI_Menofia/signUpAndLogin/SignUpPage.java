@@ -277,6 +277,7 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
                     stmt.execute(sqlCommand);
                     System.out.println("Insert new employee to DB Done ##");
                     connection.close();
+                    new CustomFunctions().gotToScene(signUpButton,"loginPage.fxml");
                 } else {
                     System.out.println("some thing is not true in all fields !! ");
                 }
