@@ -23,20 +23,20 @@
             <Image url="@assets/insertPage.png" />
          </image>
       </ImageView>
-      <Button fx:id="goToMainPageButton" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMainPageFunction" style="-fx-background-radius: 50PX;" text=" Back To main">
+      <Button fx:id="goToMainPageButton" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMainPageFunction" style="-fx-background-radius: 50PX;" text=" Back To main">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Button>
-      <Label layoutX="484.0" layoutY="22.0" prefHeight="70.0" prefWidth="292.0" style="-fx-background-radius: 15px;" text="Insert New Student" textFill="WHITE">
+      <Label layoutX="473.0" layoutY="46.0" prefHeight="70.0" prefWidth="292.0" style="-fx-background-radius: 15px;" text="Insert New Student" textFill="WHITE">
          <font>
             <Font name="Bookman Old Style Bold Italic" size="28.0" />
          </font>
       </Label>
-      <Button fx:id="goToCoursesPage" layoutX="670.0" layoutY="534.0" mnemonicParsing="false" onAction="#GoToCoursesPage" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #f7f5f0; -fx-alignment: center; -fx-background-radius: 50PX;" text="Next ">
+      <Button fx:id="goToCoursesPage" layoutX="670.0" layoutY="556.0" mnemonicParsing="false" onAction="#GoToCoursesPage" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #f7f5f0; -fx-alignment: center; -fx-background-radius: 50PX;" text="Next ">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font></Button>
-      <GridPane alignment="CENTER" layoutX="39.0" layoutY="144.0" prefHeight="227.0" prefWidth="561.0" style="-fx-padding: 25; -fx-border-radius: 30.0; -fx-background-color: #f7f5f0; -fx-background-radius: 25PX;">
+      <GridPane alignment="CENTER" layoutX="39.0" layoutY="144.0" prefHeight="227.0" prefWidth="568.0" style="-fx-padding: 25; -fx-border-radius: 30.0; -fx-background-color: #f7f5f0; -fx-background-radius: 25PX;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.3999786376953" minWidth="10.0" prefWidth="134.40001220703124" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="426.19999694824224" minWidth="10.0" prefWidth="208.79998779296872" />
@@ -115,7 +115,7 @@
          </opaqueInsets>
       </GridPane>
       <Line endX="610.0" layoutX="150.0" layoutY="111.0" startX="-110.79997253417969" stroke="WHITE" strokeWidth="2.0" />
-      <HBox alignment="CENTER" layoutX="39.0" layoutY="385.0" prefHeight="46.0" prefWidth="562.0" spacing="30.0" style="-fx-padding: 15; -fx-background-color: #f7f5f0; -fx-background-radius: 25PX;">
+      <HBox alignment="CENTER" layoutX="39.0" layoutY="385.0" prefHeight="58.0" prefWidth="568.0" spacing="30.0" style="-fx-padding: 15; -fx-background-color: #f7f5f0; -fx-background-radius: 25PX;">
          <children>
             <Label text="Level :">
                <font>
@@ -152,7 +152,7 @@
             <Font name="Bookman Old Style Bold Italic" size="25.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER" layoutX="39.0" layoutY="456.0" prefHeight="46.0" prefWidth="561.0" spacing="18.0" style="-fx-background-color: #f7f5f0; -fx-background-radius: 25PX; -fx-padding: 15;">
+      <HBox alignment="CENTER" layoutX="39.0" layoutY="456.0" prefHeight="58.0" prefWidth="568.0" spacing="18.0" style="-fx-background-color: #f7f5f0; -fx-background-radius: 25PX; -fx-padding: 15;">
          <children>
             <Label style="-fx-background-color: #f7f5f0;" text="Depatment :">
                <font>
@@ -199,8 +199,8 @@
             </RadioButton>
          </children>
       </HBox>
-      <Line endX="647.0" layoutX="117.0" layoutY="524.0" startX="-83.40000915527344" stroke="WHITE" strokeWidth="2.0" />
-      <Label layoutX="446.0" layoutY="534.0" prefHeight="46.0" prefWidth="224.0" text="Choose Student Courses :" textFill="WHITE">
+      <Line endX="647.0" layoutX="121.0" layoutY="541.0" startX="-83.40000915527344" stroke="WHITE" strokeWidth="2.0" />
+      <Label layoutX="446.0" layoutY="556.0" prefHeight="46.0" prefWidth="224.0" text="Choose Student Courses :" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
