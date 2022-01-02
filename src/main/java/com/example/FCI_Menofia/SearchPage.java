@@ -90,8 +90,8 @@ new CustomFunctions().gotToScene(backToMainPageButton,"mainPage.fxml");
         course5.setCellValueFactory(new PropertyValueFactory<>("course5"));
         course6.setCellValueFactory(new PropertyValueFactory<>("course6"));
         tabel.setItems(oblist);
-
         }
+
 
     }
 

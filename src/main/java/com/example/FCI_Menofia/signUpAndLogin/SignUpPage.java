@@ -38,11 +38,11 @@ public class SignUpPage {
 
 
     String firstName;
-String lastName;
-String userName;
-String password;
-String passwordConfirmation;
-// flags used to check if all is right or not !!
+    String lastName;
+    String userName;
+    String password;
+    String passwordConfirmation;
+    // flags used to check if all is right or not !!
     boolean firstNameIsTrue=false;
     boolean lastNameIsTrue=false;
     boolean userNameIsTure=false;
@@ -51,16 +51,16 @@ String passwordConfirmation;
     Connection connection;
     @FXML
     void backToLoginPageButtonFunction(ActionEvent event) {
-new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
+        new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
     }
 
     @FXML
     void signUpButtonFunction(ActionEvent event) {
-/*
-*
-* assign variables with data from GUI
-*
- */
+        /*
+         *
+         * assign variables with data from GUI
+         *
+         */
         firstName=employeeFirstNameTextField.getText();
         lastName=employeeLastNameTextField.getText();
         userName=userNameTextField.getText();
@@ -72,10 +72,10 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
         System.out.println("password -> "+password);
         System.out.println("Confirm Password -> "+passwordConfirmation);
         /*
-*
-* Check on first name
-*
- */
+         *
+         * Check on first name
+         *
+         */
         if(firstName.length()==0){
             firstNameIsTrue=false;
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -104,12 +104,12 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
             }
         }
         /*
-        *
-        * Check last name
-        *
+         *
+         * Check last name
+         *
          */
         if(lastName.length()==0){
-           lastNameIsTrue=false;
+            lastNameIsTrue=false;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Name Input Error !");
             alert.setHeaderText("Error in Last Name Field");
@@ -136,9 +136,9 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
             }
         }
         /*
-        *
-        * Check user name
-        *
+         *
+         * Check user name
+         *
          */
         if(userName.length()==0){
             userNameIsTure=false;
@@ -184,9 +184,9 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
 
         }
         /*
-        *
-        * passwordField check
-        *
+         *
+         * passwordField check
+         *
          */
         if(password.length()==0){ // if the Password Field is empty
             passwordIsTrue=false;
@@ -197,37 +197,37 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
             alert.showAndWait();
         }
         else{
-        if(password.length()<8){ // if the password length is less than 8
-            passwordIsTrue=false;
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("password Input Error !");
-            alert.setHeaderText("Error in password Field");
-            alert.setContentText("password length must be more than 8 !!");
-            alert.showAndWait();
-        }
-        else{
-            char[] passwordInCharArray=password.toCharArray();
-            for(int x:passwordInCharArray){
-                if(x==32){ // check if the password contain any white spaces .. it's not valid !!
-                    passwordIsTrue=false;
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("password Input Error !");
-                    alert.setHeaderText("Error in password Field");
-                    alert.setContentText("password can't contain White spaces !!");
-                    alert.showAndWait();
-                    break;
-                }
-                else{ // the password is right .. pass #
-                    passwordIsTrue=true;
+            if(password.length()<8){ // if the password length is less than 8
+                passwordIsTrue=false;
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("password Input Error !");
+                alert.setHeaderText("Error in password Field");
+                alert.setContentText("password length must be more than 8 !!");
+                alert.showAndWait();
+            }
+            else{
+                char[] passwordInCharArray=password.toCharArray();
+                for(int x:passwordInCharArray){
+                    if(x==32){ // check if the password contain any white spaces .. it's not valid !!
+                        passwordIsTrue=false;
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("password Input Error !");
+                        alert.setHeaderText("Error in password Field");
+                        alert.setContentText("password can't contain White spaces !!");
+                        alert.showAndWait();
+                        break;
+                    }
+                    else{ // the password is right .. pass #
+                        passwordIsTrue=true;
+                    }
                 }
             }
         }
-        }
 
         /*
-        *
-        * Confirmation Field Check
-        *
+         *
+         * Confirmation Field Check
+         *
          */
 
         if(passwordConfirmation.equals(password)){
@@ -243,11 +243,11 @@ new CustomFunctions().gotToScene(backToLoginPageButton,"loginPage.fxml");
 
 
 
-    /*
-    *
-    * Enter data to database ->
-    *
-     */
+        /*
+         *
+         * Enter data to database ->
+         *
+         */
         try {
             connection = DBconnector.getconnection();
             ResultSet rs = connection.createStatement().executeQuery("select * from studentsdatabase.signupdata where UserName = \"" + userName + "\";");

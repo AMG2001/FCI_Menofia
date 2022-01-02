@@ -378,7 +378,7 @@ new CustomFunctions().gotToScene(goToMainPageButton,"mainPage.fxml");
             alert.setContentText("you can't leave any one of Fields Empty !!");
             alert.showAndWait();
         }else{
-            if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()){
+            if(level3RadioButton.isSelected()&&SeRadioButton.isSelected()&&nameIsTrue==true&&nationalIdIsTrue==true&&jpaIsTrue==true&&sectionIsTrue==true){
                 new CustomFunctions().gotToScene(goToCoursesPage,"SeLevel3Courses.fxml");
                 System.out.println("com.example.FCI_Menofia.student obj in insert page -> "+student);
                 System.out.println("Student name is -> "+student.studentName);

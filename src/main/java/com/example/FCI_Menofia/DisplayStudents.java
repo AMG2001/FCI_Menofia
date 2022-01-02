@@ -81,7 +81,7 @@ private String ResourceBundle="resources";
             tabel.getItems().clear(); // function that used to clear the content of the table
             Connection con=DBconnector.getconnection();
             System.out.println("Connection with database done  ## in display page");
-            ResultSet rs=con.createStatement().executeQuery("select * from studentsdatabase.studentsinfo;");
+            ResultSet rs=con.createStatement().executeQuery("select * from studentsdatabase.studentsinfo order by LEVEL;");
             System.out.println("SetResults done ##");
             while (rs.next()){
                 oblist.add(new modeltabel(rs.getString("name"),rs.getString("level"),rs.getString("department"),rs.getString("section"),rs.getString("jpa"),rs.getString("course1"),rs.getString("course2"),rs.getString("course3"),rs.getString("course4"),rs.getString("course5"),rs.getString("course6"),rs.getString("nationalid")));
@@ -130,6 +130,7 @@ String deletingStudentSqlCommand="Delete from studentsdatabase.studentsinfo wher
            try{
                stmt.execute(deletingStudentSqlCommand);
                displayStudents();
+               con.close();
            }catch (Exception e){
                System.out.println("Entered value is not allowed !! ");
            }
